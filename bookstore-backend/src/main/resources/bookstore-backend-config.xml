@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shoppingCart" class="service.ShoppingCart"/>
+
+    <!--bookstoreDataSource value can be replaced with a variable loaded from a properties file-->
+    <bean id="bookLoader" class="service.BookLoaderImpl">
+        <property name="bookstoreDataSource" value="http://www.contribe.se/bookstoredata/bookstoredata.txt"/>
+    </bean>
+
+    <bean id="bookstoreService" class="service.BookstoreService">
+        <property name="bookLoader" ref="bookLoader"/>
+    </bean>
+
+</beans>
