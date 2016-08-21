@@ -1,1 +1,21 @@
 This file was created by IntelliJ IDEA 12.0.4 for binding GitHub repository
+
+Creator: Werner Olsson
+For: Contribe arbetsprov
+
+I created this maven project with IntelliJ. Dependencies and other libraries were downloaded and compiled with Maven.
+
+Notes on chosen structure: 
+According to the instructions this is only an application. It is not specified otherwise to be a Web application.
+However, comercially it would hardly make sense to run a bookstore application on one POS only. Assuming that this serves as a prototype, 
+ans web application would be the next phase in this project, I used Spring as it would be easier to transform this into a web application.
+A web application no doubtedely would require various layers such as: fronntend, backend, services, daos, ejbs, web-services. For this purpose
+it will be good to have Spring and Maven to combine so many different components. Spring integrates well with JEE as well and is a commercial
+industry standard nowadays. In addition, the current benefit is already a more modular structure and dependency injection which makes
+for easy configurability.
+
+Notes on transformation to web application: 
+Since this console application is only logically intended for one machine, no regards was given to concurrency of the datastructures like
+the inventory, booklist and the operations thereon. However, when converting to a web application the shopping cart for instance would need
+to be made sessionscoped. If a SaaS approach is taken BookstoreService can be made an EJB for instance and injected into a service endpoint.
+
